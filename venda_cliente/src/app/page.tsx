@@ -1,56 +1,12 @@
 "use client";
-import { InputPesquisa } from "@/components/InputPesquisa";
-import { ItemProdutos } from "@/components/ItemProdutos";
-import { ProdutoI } from "@/utils/types/produtos";
-import { useEffect, useState } from "react";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import { useClienteStore } from "@/context/cliente";
+
+import { Link } from "lucide-react";
 
 export default function Home() {
-  const [produtos, setProdutos] = useState<ProdutoI[]>([]);
-  const { logaCliente } = useClienteStore();
 
-  useEffect(() => {
-    async function getCliente(idCliente: string) {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_URL_API}/clientes/${idCliente}`
-      );
-      if (response.status === 200) {
-        const dados = await response.json();
-        logaCliente(dados);
-      }
-    }
-
-    if (localStorage.getItem("client_key")) {
-      const clienteSalvo = localStorage.getItem("client_key") as string;
-      getCliente(clienteSalvo);
-    }
-
-    async function getDados() {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_URL_API}/produtos`
-      );
-      const dados = await response.json();
-      setProdutos(dados);
-    }
-    getDados();
-  }, []);
-
-  const listaProdutos = produtos.map((produto) => (
-    <ItemProdutos data={produto} key={produto.id} />
-  ));
 
   return (
     <>
-      <InputPesquisa setProdutos={setProdutos} />
       <div className="mx-auto max-w-screen-xl ">
         <h1 className=" p-5 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-slate-600 from-yellow-400">
@@ -58,27 +14,301 @@ export default function Home() {
           </span>
         </h1>
         <section className=" mb-10 grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-          {listaProdutos}
+          <div className="w-72 max-w-sm bg-[#202020] border-gray-200 rounded-3xl shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]">
+            <a href="">
+              <img
+                className="p-5 rounded-[2rem]"
+                src="/ryzen.jpg"
+                alt="product image"
+              />
+            </a>
+            <div className="px-5 pb-5">
+              <a href="">
+                <h5 className="text-xl min-h-32 font-semibold tracking-tight text-white">
+                  Ryzen 5 5700
+                </h5>
+              </a>
+              <div className="flex items-center mt-2.5 mb-5">
+                <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-gray-200 dark:text-gray-600"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </div>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+                  5.0
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-white">
+                  R$ 19.00
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-72 max-w-sm bg-[#202020] border-gray-200 rounded-3xl shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]">
+            <a href="">
+              <img
+                className="p-5 rounded-[2rem]"
+                src="/ryzen.jpg"
+                alt="product image"
+              />
+            </a>
+            <div className="px-5 pb-5">
+              <a href="">
+                <h5 className="text-xl min-h-32 font-semibold tracking-tight text-white">
+                  Ryzen 5 5700
+                </h5>
+              </a>
+              <div className="flex items-center mt-2.5 mb-5">
+                <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-gray-200 dark:text-gray-600"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </div>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+                  5.0
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-white">
+                  R$ 19.00
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="w-72 max-w-sm bg-[#202020] border-gray-200 rounded-3xl shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]">
+            <a href="">
+              <img
+                className="p-5 rounded-[2rem]"
+                src="/ryzen.jpg"
+                alt="product image"
+              />
+            </a>
+            <div className="px-5 pb-5">
+              <a href="">
+                <h5 className="text-xl min-h-32 font-semibold tracking-tight text-white">
+                  Ryzen 5 5700
+                </h5>
+              </a>
+              <div className="flex items-center mt-2.5 mb-5">
+                <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-gray-200 dark:text-gray-600"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </div>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+                  5.0
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-white">
+                  R$ 19.00
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="w-72 max-w-sm bg-[#202020] border-gray-200 rounded-3xl shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]">
+      <a href="">
+        <img
+          className="p-5 rounded-[2rem]"
+          src="/ryzen.jpg"
+          alt="product image"
+        />
+      </a>
+      <div className="px-5 pb-5">
+        <a href="">
+          <h5 className="text-xl min-h-32 font-semibold tracking-tight text-white">
+            Ryzen 5 5700
+          </h5>
+        </a>
+        <div className="flex items-center mt-2.5 mb-5">
+          <div className="flex items-center space-x-1 rtl:space-x-reverse">
+            <svg
+              className="w-4 h-4 text-yellow-300"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg
+              className="w-4 h-4 text-yellow-300"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg
+              className="w-4 h-4 text-yellow-300"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg
+              className="w-4 h-4 text-yellow-300"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg
+              className="w-4 h-4 text-gray-200 dark:text-gray-600"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+          </div>
+          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+            5.0
+          </span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-2xl font-bold text-white">
+            R$ 19.00
+          </span>
+        </div>
+      </div>
+      
+    </div>
         </section>
-        <Pagination className="mb-10 mt-10">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">2</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
       </div>
     </>
   );
