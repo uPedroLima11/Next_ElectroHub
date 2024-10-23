@@ -4,9 +4,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Nexus Gaming",
-  description: "Loja de Computadores PC store",
-  keywords: ["PC", "Loja", "Computadores"],
+  title: "ElectroHub",
+  description: "Loja de Eletronicos ElectroHub",
 };
 
 export default function RootLayout({
