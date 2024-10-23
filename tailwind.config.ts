@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
@@ -9,13 +10,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter", "sans-serif"], 
+      boxShadow: {
+        'custom-shadow': '0px 6px 0px rgba(0, 0, 0, 0.05)',
       },
+      
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -66,7 +67,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;
