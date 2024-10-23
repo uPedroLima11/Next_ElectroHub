@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Nexus Gaming",
@@ -16,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="pt-br">
-      <body className="bg-[#e0dfdf]">
+      <body className="bg-[#d6d4d4]">
+      
+        
         <Header />
         {children}
         <Toaster />
