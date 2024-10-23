@@ -22,16 +22,20 @@ export default function Banner() {
 
       <div className="mt-6 md:mt- md:mr-36">
         <Image
-          className="p-4 object-cover h-[15rem] w-[15rem] sm:h-[15rem] sm:w-[12rem] md:h-[23rem] md:w-[19rem] shadow-custom-shadow rounded-full"
+          className="p-4 object-cover h-[15rem] w-[15rem] sm:h-[15rem] sm:w-[12rem] md:h-[23rem] md:w-[19rem] shadow-none md:shadow-custom-shadow rounded-full animate-move"
           src="/fone1.png"
           alt="Banner"
           width={400}
           height={100}
           quality={100}
         />
-
       </div>
 
+
+
+
     </div>
+
+
   )
 }

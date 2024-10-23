@@ -17,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
+
     <html lang="pt-br">
       <body className="bg-[#d6d4d4]">
-      
-        
+
+
         <Header />
         {children}
         <Toaster />
