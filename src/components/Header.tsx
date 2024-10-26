@@ -12,7 +12,7 @@ export function Header() {
             <span className="text-[#0fbeddee]">Electro</span>Hub
           </span>
         </Link>
-
+<br />
         <div className="hidden lg:flex space-x-3 ml-auto">
         </div>
         <div className="lg:hidden flex items-center ml-auto">
