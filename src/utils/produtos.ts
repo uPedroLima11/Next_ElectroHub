@@ -34,7 +34,7 @@ export const produtos = [
 
 
     {
-      src: "/Microfone.png",
+      src: "/microfone.png",
       alt: "Microfone",
       title: "Microfone Gamer Maono DGM20, RGB, USB, Preto",
       price: "R$ 319,15",
