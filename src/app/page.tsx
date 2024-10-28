@@ -35,9 +35,10 @@ export default function Home() {
                 />
               </div>
               <h1 className="mt-5 text-xl min-h-32 text-gray-700 mx-2 text-center">
-                <span className="font-medium">{produto.title}</span> <br />
-                <span className="font-mono text-black text-xl">{produto.price}</span>
+                <span className="font-medium md:mr-2 ml-5 block">{produto.title}</span>
+                <span className="font-mono text-black text-xl block">{produto.price}</span>
               </h1>
+
             </div>
           ))}
         </section>
