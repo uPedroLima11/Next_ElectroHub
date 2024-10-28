@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="bg-[#262626] p-5 font-[sans-serif] tracking-wide">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
         <div className="flex items-center mb-4">
           <a href="javascript:void(0)">
             <img
