@@ -12,7 +12,7 @@ export default function Banner() {
         </div>
         <button
           type="button"
-          className="mt-10 py-2 px-4 text-sm font-medium text-white focus:outline-none bg-[#262626] rounded-full border border-gray-200 hover:bg-[#ff4646] hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100"
+          className="mt-10 py-2 px-4 text-sm font-medium text-white focus:outline-none bg-[#ff2a2a] rounded-full border border-gray-200 hover:bg-[#202020] hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100"
         >
           Compre Agora
         </button>
