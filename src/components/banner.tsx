@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Banner() {
   return (
-    <div className="mt-12 flex flex-col md:flex-row items-center justify-between bg-[#b9b9b9] p-10 md:p-20 rounded-lg shadow-md ">
+    <div className="mt-12 flex flex-col md:flex-row items-center justify-between bg-[#b9b9b9] p-10 md:p-20 rounded-3xl shadow-md ">
       <div className="flex-1 mr-4">
         <div className="gap-2 flex flex-col mt-10">
           <h1 className="text-lg md:text-xl font-semibold text-gray-800 -mt-10">

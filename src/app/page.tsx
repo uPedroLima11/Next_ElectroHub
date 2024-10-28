@@ -3,6 +3,7 @@
 import Banner from "@/components/banner";
 import Image from "next/image";
 import { produtos } from '@/utils/produtos';
+
 export default function Home() {
 
 
