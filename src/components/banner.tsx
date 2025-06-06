@@ -13,7 +13,7 @@ export default function Banner() {
             Aproveite a Promoção de Verão! ☀️
           </h1>
           <h1 className="ml-2 md:ml-2 text-5xl md:text-7xl text-white font-black">
-            Som <span className='text-red-700 font-extrabold'>Premium</span>, Preço Imbatível!
+            Som <span className='text-red-700 font-extrabold'>Premium</span>, Preços Imbatíveis!
           </h1>
 
         </div>
