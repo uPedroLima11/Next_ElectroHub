@@ -10,7 +10,7 @@ export default function Banner() {
             Beats Studio Air
           </h1>
           <h1 className="text-2xl font-medium md:text-4xl mt-2 text-black">
-            Aproveite a Promoção de Verão! ☀️
+            Aproveite a Promoção do Verão! ☀️
           </h1>
           <h1 className="ml-2 md:ml-2 text-5xl md:text-7xl text-white font-black">
             Som <span className='text-red-700 font-extrabold'>Premium</span>, Preços Imbatíveis!
